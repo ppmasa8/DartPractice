@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'sub_container.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: <String, WidgetBuilder>{
+        '/sub': (BuildContext context) => (SubPage()),
+      },
     );
   }
 }
@@ -113,6 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   ),
+            ),
+            RaisedButton(
+              splashColor: Colors.green,
+              child: Text('Subページに移動'),
+              onPressed: () => {Navigator.pushNamed(context, '/sub')},
             ),
             Text(
               'You have pushed the button this many times:',
