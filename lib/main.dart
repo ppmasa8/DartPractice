@@ -96,6 +96,24 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'HelloWorld!!!',
             ),
+            RaisedButton(
+              child: Text('ボタンだよ！！'),
+              onPressed: () => showDialog(
+                  context: context,
+                  builder: (_) {
+                    return AlertDialog(
+                      title :Text("message"),
+                      content: Text("Flutterって癖強い気がするなあ...."),
+                      actions: <Widget>[
+                        FlatButton(
+                          child: Text("閉じる"),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ],
+                    );
+                  },
+                  ),
+            ),
             Text(
               'You have pushed the button this many times:',
             ),
